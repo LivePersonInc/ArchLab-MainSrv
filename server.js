@@ -21,18 +21,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//app.use(express.static(path.join(__dirname, 'public')));
-
-
 app.use('/', routes);
-//app.use('/users', users);
-
-
-
+//app.use('/users', grafanaRoutes);
 
 
 app.set('port', 8888);
 
-var server = app.listen(app.get('port'), function() {
+app.listen(app.get('port'), function() {
     console.log('Express server listening on port ' + server.address().port);
 });
