@@ -8,13 +8,10 @@
     <meta name="google" value="notranslate">
 
     <title>Grafana</title>
-    <link rel="stylesheet" href="css/grafana.dark.min.css" title="Dark">
+    <link rel="stylesheet" href="css/grafana.dark.min.a8479ac1.css" title="Dark">
     <link rel="icon" type="image/png" href="img/fav32.png">
 
-    <!-- build:js app/app.js -->
-    <script src="vendor/require/require.js"></script>
-    <script src="app/components/require.config.js"></script>
-    <!-- endbuild -->
+    <script src="app/app.ae1e5ed0.js"></script>
 
     <script>require(['app'], function (app) { app.boot(); })</script>
 
@@ -22,7 +19,7 @@
 
   <body ng-cloak ng-controller="GrafanaCtrl">
 
-    <link rel="stylesheet" href="css/grafana.light.min.css" ng-if="grafana.style === 'light'">
+    <link rel="stylesheet" href="css/grafana.light.min.b909fae1.css" ng-if="grafana.style === 'light'">
 
 		<div class="page-alert-list">
 			<div ng-repeat='alert in dashAlerts.list' class="alert-{{alert.severity}} alert">

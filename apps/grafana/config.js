@@ -4,7 +4,7 @@
 
 define(['settings'],
 function (Settings) {
-  "use strict";
+  
 
   return new Settings({
 

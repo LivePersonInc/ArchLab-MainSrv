@@ -14,7 +14,7 @@
  * call this function with the dasboard object
  */
 
-'use strict';
+
 
 // accessable variables in this scope
 var window, document, ARGS, $, jQuery, moment, kbn;

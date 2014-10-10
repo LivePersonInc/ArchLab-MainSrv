@@ -1,26 +1,4 @@
-define([],
-  function() {
-  'use strict';
+/*! grafana - v1.8.1 - 2014-09-30
+ * Copyright (c) 2014 Torkel Ödegaard; Licensed Apache License */
 
-  return {
-    create: function() {
-      return {
-        title: "",
-        tags: [],
-        style: "dark",
-        timezone: 'browser',
-        editable: true,
-        failover: false,
-        panel_hints: true,
-        rows: [],
-        pulldowns: [ { type: 'templating' },  { type: 'annotations' } ],
-        nav: [ { type: 'timepicker' } ],
-        time: {from: '1h', to: 'now'},
-        templating: {
-          list: []
-        },
-        refresh: '10s',
-      };
-    }
-  };
-});
+define([],function(){return{create:function(){return{title:"",tags:[],style:"dark",timezone:"browser",editable:!0,failover:!1,panel_hints:!0,rows:[],pulldowns:[{type:"templating"},{type:"annotations"}],nav:[{type:"timepicker"}],time:{from:"1h",to:"now"},templating:{list:[]},refresh:"10s"}}}});

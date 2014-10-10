@@ -1,18 +1,4 @@
-define([
-  './helpers',
-  'controllers/row'
-], function(helpers) {
-  'use strict';
+/*! grafana - v1.8.1 - 2014-09-30
+ * Copyright (c) 2014 Torkel Ödegaard; Licensed Apache License */
 
-  describe('RowCtrl', function() {
-    var ctx = new helpers.ControllerTestContext();
-
-    beforeEach(module('grafana.controllers'));
-
-    beforeEach(ctx.providePhase());
-    beforeEach(ctx.createControllerPhase('RowCtrl'));
-
-  });
-
-});
-
+define(["./helpers","controllers/row"],function(a){describe("RowCtrl",function(){var b=new a.ControllerTestContext;beforeEach(module("grafana.controllers")),beforeEach(b.providePhase()),beforeEach(b.createControllerPhase("RowCtrl"))})});

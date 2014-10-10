@@ -1,31 +1,4 @@
-module.exports = function(config) {
-  'use strict';
+/*! grafana - v1.8.1 - 2014-09-30
+ * Copyright (c) 2014 Torkel Ödegaard; Licensed Apache License */
 
-  config.set({
-    basePath: '../../',
-
-    frameworks: ['mocha', 'requirejs', 'expect', 'sinon'],
-
-    // list of files / patterns to load in the browser
-    files: [
-      'src/test/test-main.js',
-      {pattern: 'src/app/**/*.js', included: false},
-      {pattern: 'src/vendor/**/*.js', included: false},
-      {pattern: 'src/test/**/*.js', included: false},
-      {pattern: 'src/**/*.js', included: false}
-    ],
-
-    // list of files to exclude
-    exclude: [],
-
-    reporters: ['dots'],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['PhantomJS'],
-    captureTimeout: 60000,
-    singleRun: true,
-
-  });
-};
+module.exports=function(a){a.set({basePath:"../../",frameworks:["mocha","requirejs","expect","sinon"],files:["src/test/test-main.js",{pattern:"src/app/**/*.js",included:!1},{pattern:"src/vendor/**/*.js",included:!1},{pattern:"src/test/**/*.js",included:!1},{pattern:"src/**/*.js",included:!1}],exclude:[],reporters:["dots"],port:9876,colors:!0,logLevel:a.LOG_INFO,autoWatch:!0,browsers:["PhantomJS"],captureTimeout:6e4,singleRun:!0})};
