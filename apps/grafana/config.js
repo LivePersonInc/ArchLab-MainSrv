@@ -53,20 +53,20 @@ function (Settings) {
     */
 
     // OpenTSDB & Elasticsearch example setup
-    /*
+
     datasources: {
       opentsdb: {
         type: 'opentsdb',
-        url: "http://opentsdb.server:4242",
+        url: "http://labs.efimd.com/opentsdb"
       },
       elasticsearch: {
         type: 'elasticsearch',
-        url: "http://my.elastic.server.com:9200",
+        url: "http://labs.efimd.com/elastic",
         index: 'grafana-dash',
-        grafanaDB: true,
+        grafanaDB: true
       }
     },
-    */
+
 
     /* Global configuration options
     * ========================================================
@@ -90,7 +90,7 @@ function (Settings) {
     // If you want to specify password before saving, please specify it bellow
     // The purpose of this password is not security, but to stop some users from accidentally changing dashboards
     admin: {
-      password: ''
+      password: 'password'
     },
 
     // Change window title prefix from 'Grafana - <dashboard title>'
@@ -102,7 +102,7 @@ function (Settings) {
       panels: [],
       // requirejs modules in plugins folder that should be loaded
       // for example custom datasources
-      dependencies: [],
+      dependencies: []
     }
 
   });
