@@ -21,6 +21,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use(express.static(path.join(__dirname, 'apps/grafana')));
+
 app.use('/', routes);
 //app.use('/users', grafanaRoutes);
 
