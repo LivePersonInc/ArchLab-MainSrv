@@ -12,8 +12,11 @@
         "ws": "latest",
         "node-uuid": "latest",
         "express": "latest",
+        "cookie-parser": "latest",
         "body-parser": "latest",
-        "winston": "latest"
+        "winston": "latest" ,
+        "jade": "latest"
+
     },
     "readme": "README.md",
     "private": true,
