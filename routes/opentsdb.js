@@ -12,7 +12,7 @@ var request = require('request');
 
 
 router.get('/', function(req, res) {
-    var url = req.baseUrl.replace('/opentsdb', '');
+    var url = req.originalUrl.replace('/opentsdb', '');
 
     log.info('Serving Opentsdb proxy to url='+ url);
 
@@ -34,7 +34,7 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
 
-    var url = req.baseUrl.replace('/opentsdb', '');
+    var url = req.originalUrl.replace('/opentsdb', '');
 
     log.info('Serving Elastic proxy to url='+ url);
 

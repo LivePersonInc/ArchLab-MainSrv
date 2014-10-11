@@ -11,7 +11,7 @@ var request = require('request');
 
 router.post('/', function(req, res) {
 
-    var url = req.baseUrl.replace('/elastic', '');
+    var url = req.originalUrl.replace('/elastic', '');
 
     log.info('Serving Elastic proxy to url='+ url);
 
