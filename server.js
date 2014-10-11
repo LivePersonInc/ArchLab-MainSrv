@@ -4,11 +4,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var path = require('path');
 
+var log = require('./lib/logger');
 
-var routes = require('./routes/main');
-//var grafanaRoutes = require('./routes/grafana');
+var mainRoutes = require('./routes/main');
+var elasticRoutes = require('./routes/elastic');
 
 var app = express();
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -20,15 +22,13 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use('/apps/grafana', express.static(path.join(__dirname, 'apps/grafana')));
 
-app.use('/', routes);
-//app.use('/users', grafanaRoutes);
-
+app.use('/', mainRoutes);
+app.use('/elastic/*', elasticRoutes);
 
 app.set('port', 8888);
 
 var server = app.listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + server.address().port);
+    log.info('Express server listening on port ' + server.address().port);
 });

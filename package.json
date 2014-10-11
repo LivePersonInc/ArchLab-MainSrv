@@ -15,8 +15,9 @@
         "cookie-parser": "latest",
         "body-parser": "latest",
         "winston": "latest" ,
-        "jade": "latest"
-
+        "moment": "latest" ,
+        "jade": "latest",
+        "http-proxy" : "latest"
     },
     "readme": "README.md",
     "private": true,
