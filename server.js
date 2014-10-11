@@ -8,6 +8,7 @@ var log = require('./lib/logger');
 
 var mainRoutes = require('./routes/main');
 var elasticRoutes = require('./routes/elastic');
+var opentsdbRoutes = require('./routes/opentsdb');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use('/apps/grafana', express.static(path.join(__dirname, 'apps/grafana')));
 
 app.use('/', mainRoutes);
 app.use('/elastic/*', elasticRoutes);
+app.use('/opentsdb/*', opentsdbRoutes);
 
 app.set('port', 8888);
 
