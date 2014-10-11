@@ -12,7 +12,7 @@ var request = require('request');
 
 router.all('/', function(req, res) {
 
-    var url = req.originalUrl.replace('/opentsdb', '');
+    var url = req.originalUrl.replace('/elastic', '');
 
     log.info('Serving Elastic proxy to method:'+req.method + ' url='+ url);
 
@@ -33,5 +33,6 @@ router.all('/', function(req, res) {
         res.send(body);
     });
 });
+
 
 module.exports = router;
