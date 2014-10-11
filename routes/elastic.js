@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
         url : 'http://54.164.252.162:9200' + url,
         method : 'post',
         headers : req.headers,
-        body : req.body
+        body : JSON.stringify(req.body)
     };
 
     request(options, function(error, response, body) {
