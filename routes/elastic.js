@@ -18,7 +18,8 @@ router.post('/', function(req, res) {
     var options = {
         url : 'http://54.164.252.162:9200' + url,
         method : 'post',
-        headers : req.headers
+        headers : req.headers,
+        body : req.body
     };
 
     request(options, function(error, response, body) {
