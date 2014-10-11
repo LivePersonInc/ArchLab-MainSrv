@@ -9,21 +9,24 @@ var log = require('../lib/logger');
 
 var request = require('request');
 
-router.post('/', function(req, res) {
 
-    var url = req.originalUrl.replace('/elastic', '');
+router.all('/', function(req, res) {
 
-    log.info('Serving Elastic proxy to url='+ url);
+    var url = req.originalUrl.replace('/opentsdb', '');
+
+    log.info('Serving Elastic proxy to method:'+req.method + ' url='+ url);
 
     var options = {
         url : 'http://54.164.252.162:9200' + url,
-        method : 'post',
-        headers : req.headers,
-        body : JSON.stringify(req.body)
+        method : req.method,
+        headers : req.headers
     };
+    if (req.method=='POST' || req.method=='PUT') {
+        options.body = JSON.stringify(req.body);
+    }
 
     request(options, function(error, response, body) {
-        log.info('GOT response from ElasticSearch error='+error);
+        log.info('GOT response from Elastic error='+error);
         for (var name in response.headers) {
             res.setHeader(name, response.headers[name]);
         }
