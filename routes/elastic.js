@@ -9,20 +9,28 @@ var httpProxy = require('http-proxy');
 
 var log = require('../lib/logger');
 
-var proxy = httpProxy.createProxyServer({});
+var request = require('request');
 
-proxy.on('error', function (err, req, res) {
-    log.error('Elastic proxy error:' + err);
-    res.writeHead(500, {
-        'Content-Type': 'text/plain'
+
+router.post('/', function(req, res) {
+
+    var url = req.baseUrl.replace('/elastic', '');
+
+    log.info('Serving Elastic proxy to url='+ url);
+
+    var options = {
+        url : 'http://54.164.252.162:9200' + url,
+        method : 'post',
+        headers : req.headers
+    };
+
+    request(options, function(error, response, body) {
+        log.info('GOT response from ElasticSearch error='+error);
+        for (var name in response.headers) {
+            res.setHeader(name, response.headers[name]);
+        }
+        res.send(body);
     });
-
-    res.end('Something went wrong. And we are reporting a custom error message.');
-});
-
-router.all('/', function(req, res) {
-    log.info('Serving Elastic proxy');
-    proxy.web(req, res, { target: 'http://54.164.252.162:9200' });
 });
 
 module.exports = router;
