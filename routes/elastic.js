@@ -20,8 +20,7 @@ proxy.on('error', function (err, req, res) {
     res.end('Something went wrong. And we are reporting a custom error message.');
 });
 
-/* GET home page. */
-router.get('/', function(req, res) {
+router.all('/', function(req, res) {
     log.info('Serving Elastic proxy');
     proxy.web(req, res, { target: 'http://54.164.252.162:9200' });
 });
