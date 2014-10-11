@@ -5,12 +5,9 @@
 var express = require('express');
 var router = express.Router();
 
-var httpProxy = require('http-proxy');
-
 var log = require('../lib/logger');
 
 var request = require('request');
-
 
 router.post('/', function(req, res) {
 
