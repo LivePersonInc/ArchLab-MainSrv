@@ -24,6 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/apps/grafana', express.static(path.join(__dirname, 'apps/grafana')));
+app.use('/apps/kibana', express.static(path.join(__dirname, 'apps/kibana')));
 
 app.use('/', mainRoutes);
 app.use('/elastic/*', elasticRoutes);
