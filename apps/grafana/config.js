@@ -94,7 +94,7 @@ function (Settings) {
     },
 
     // Change window title prefix from 'Grafana - <dashboard title>'
-    window_title_prefix: 'Grafana - ',
+    window_title_prefix: 'Architecture Lab - ',
 
     // Add your own custom panels
     plugins: {
